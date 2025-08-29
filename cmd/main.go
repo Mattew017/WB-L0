@@ -114,7 +114,7 @@ func startHTTPServer(cfg *config.Config, getOrderUseCase *usecase.GetOrderUseCas
 	handler := http_handler.NewOrderHandler(getOrderUseCase)
 
 	server := &http.Server{
-		Addr:         "localhost:" + cfg.HTTPPort,
+		Addr:         ":" + cfg.HTTPPort,
 		Handler:      handler,
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 10 * time.Second,
